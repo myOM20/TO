@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="" style="background-color: #008ecd;">
+    <div class="container">
+      <div
+        class="col-md-9 col-xl-6 mx-auto"
+        style="background-color: #fff; margin-top: 64px; padding: 20px"
+      >
+        <div class="d-flex justify-content-between mb-2">
+          <h3>Places List</h3>
+          <a class="btn btn-secondary" href="/place"
+            ><i class="fa fa-plus"></i> Create New</a
+          >
+        </div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Distance</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < places.length; i++) { %>
+
+            <tr>
+              <td><%= places[i].placeId %></td>
+              <td><%= places[i].placeName %></td>
+              <td><%= places[i].location %></td>
+              <td><%= places[i].distance %></td>
+              <td>
+                <a href="/place/<%= places[i].placeId %>"
+                  ><i class="fa fa-pencil fa-lg me-2" aria-hidden="true"></i
+                ></a> 
+              </td>
+              <td>
+                <a
+                href="/place/delete/<%= places[i].placeId %>"
+                onclick="return confirm('Are you sure to delete this record ?');"
+                ><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Hotels Abha </title>
+    <link rel="stylesheet" href="css/hotels.css" />
+</head>
+<body>
+ <div>
+  <header>
+    <%- include('../partials/navbar') -%>
+  </header>
+
+  
+
+
+    <div class="row m-5">
+      <% chunk.forEach((hotels)=> {%>
+      <div class="col-lg-12">
+        
+          <% hotels.forEach((hotel)=> {%>
+        <div class="card box-shadow m-3">
+          <div class="row ">
+            <div class="col">
+              <img src="<%= hotel.image1Url %>" class="card-img-top" alt="...">
+            </div>
+            <div class="col">
+              <img src="<%= hotel.image2Url %>" class="card-img-top" alt="...">
+            </div>
+            <div class="col">
+              <img src="<%= hotel.image3Url %>" class="card-img-top" alt="...">
+            </div>
+          </div>
+                  
+          <div class="card-body">
+            <h5 class="card-title  text-capitalize"><%= hotel.hotelName %></h5>
+            <h5 class="card-title text-capitalize"><%=hotel.distance %> km :المسافة من مركز المدينة</h5>
+            <h5 class="card-text p-0 pb-3"><%= hotel.info %></h5>
+            
+            <h5 class="card-title  text-capitalize"><a href="<%= hotel.location %>" target="_blank"> للوصول للموقع على قوقل ماب اضغط هنا </a></h5>
+            <a href="<%= hotel.reservation %>" target="_blank" class="btn btn-primary">  للحجز من موقع بوكينق</a>
+            
+            
+    
+          </div>
+        </div>
+        <%})%>
+       
+      </div>
+      <%})%>
+     
+    </div>
+
+    
+  <footer>
+    <%- include('../partials/footer') -%>
+  </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Place Nmas </title>
+    <link rel="stylesheet" href="css/places.css" />
+</head>
+<body>
+
+  <nav>
+    <%- include('../partials/navbar') -%>
+    </nav>
+
+    <h1 class="title p-3">الاماكن السياحية و الترفيهية في ابها  </h1>
+
+
+   <div class="container py-5">
+        <div class="d-flex justify-content-center">
+          <div class="col-12">
+            <% chunk.forEach((places)=> {%>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <% places.forEach((place)=> {%>
+              <div class="col mt-5">
+               
+                <div class="card border-warning card-wr-bg"> <img src="<%= place.imageUrl %>" class="card-img-top" alt="...">
+                  <div class="card-body d-grid gap-3">
+                    <h5 class="card-title text-center text-capitalize"><%= place.placeName %></h5>
+                    <h5 class="card-title text-center text-capitalize"><%=place.distance%>km :المسافة من مركز المدينة</h5>
+                    <p class="card-text text-center p-0 pb-3"><%= place.info %></p>
+                    <h5 class="card-title text-center text-capitalize"><a href="<%= place.location %>" target="_blank"> للوصول للموقع على قوقل ماب اضغط هنا </a></h5>
+                  </div>    
+                </div>   
+            </div>
+            <%})%>
+          </div>  
+          <%})%>
+        </div>
+      </div>
+    </div>  
+
+
+    
+  <footer>
+    <%- include('../partials/footer') -%>
+  </footer>
+</body>
+</html>
+

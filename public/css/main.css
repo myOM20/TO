@@ -1,0 +1,49 @@
+
+body{
+    background-image: url("login.jpg");
+    background-size: cover;
+}
+label{
+    font-size: 2rem;
+    width: 300px;
+    color:black;
+    
+  }
+
+
+input[type=submit] {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+label{
+    font-size: 1.5rem;
+    width: 300px;
+    color:black;
+	text-align: left;
+    
+  }
+p{
+	margin-top: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+#LangTable{
+    margin-bottom: 15px;
+}
+.form-card{
+    background-color: #fff8eb;
+    border-radius: 10px;
+    margin-top: 130px;
+}
+.mssg{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 100px;
+	
+}

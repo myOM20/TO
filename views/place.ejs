@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+  </head>
+  <body class="" style="background-color: #008ecd;">
+    <div class="container">
+      <div class="row">
+       
+       
+
+        <div class=" p-4 mx-auto mt-5 bg-white col-md-9 col-xl-6">
+          <h2 class="mb-4"><%= title %></h2>
+
+          <form class='gy-3' action="/place" method="POST" autocomplete="off">
+            <input type="hidden" name="_id" value="<%= locals.place?._id ? locals.place._id :'' %>" />
+            <div class="mb-3">
+              <label lass="form-label">Place Id</label>
+              <input
+                type="text"
+                class="form-control"
+                name="placeId"
+                value="<%= locals.place?.placeId ? locals.place.placeId :'' %>"
+              />
+              <% if(locals.errors){ %>
+                <div class="text-danger"><%= errors.placeId %></div>
+              <% } %>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">City Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="cityName"
+                value="<%= locals.place?.cityName ? locals.place.cityName :'' %>"
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.cityName %></div>
+              <% } %>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Place Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="placeName"
+                value="<%= locals.place?.placeName ? locals.place.placeName :'' %>"
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.placeName %></div>
+              <% } %>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Place Information</label>
+              <input
+                type="text box"
+                class="form-control p-4"
+                name="info"
+                value="<%= locals.place?.info ? locals.place.info :'' %>"
+                
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.info %></div>
+              <% } %>
+            </div>
+
+
+            <div class="mb-3">
+              <label class="form-label">Place Image</label>
+              <input
+                type="text"
+                class="form-control"
+                name="imageUrl"
+                placeholder="/images/img.jpeg"
+                value="<%= locals.place?.imageUrl ? locals.place.imageUrl :'' %>"
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.imageUrl %></div>
+              <% } %>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Location</label>
+              <input
+                type="text"
+                class="form-control"
+                name="location"
+                value="<%= locals.place?.location ? locals.place.location :'' %>"
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.location %></div>
+              <% } %>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Distance</label>
+              <input
+                type="text"
+                class="form-control"
+                name="distance"
+                value="<%= locals.place?.distance ? locals.place.distance :'' %>"
+              />
+              <% if(locals.errors){ %>
+              <div class="text-danger"><%= errors.distance %></div>
+              <% } %>
+            </div>
+             
+          
+            <div class="mb-3 mt-4">
+              <button type="submit" class="btn  me-2" style="background-color: #008ecd;">
+                <i class="fa fa-database"></i> Submit
+              </button>
+              <a class="btn btn-secondary" href="place/list"
+                ><i class="fa fa-list-alt"></i> View All</a
+              >
+
+              <a class="btn btn-secondary" href="/hotel"
+                ><i class="fa fa-list-alt"></i> Add Hotel Click here </a
+              >
+            </div>
+          </form>
+
+          
+
+      </div>
+    </div>
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
